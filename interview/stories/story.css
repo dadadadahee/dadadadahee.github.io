@@ -1,0 +1,32 @@
+html body {
+	width: 100%;
+	height:100%;
+	background-color: black;
+	
+}
+
+p,a {
+	color: white;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'armata', sans-serif;
+	font-size: 11px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+}
+
+.quote {
+	color: white;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'armata', sans-serif;
+	font-size: 11px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+}

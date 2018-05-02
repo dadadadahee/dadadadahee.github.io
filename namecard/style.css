@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+body {
+    background: url('index.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+img {
+   object-fit: cover;
+   width: 50px;
+   height: 100px;
+}
+
+p {
+	color: white;
+	font-family: 'Arimo', sans-serif;
+	opacity: 60%;
+}
+
+a {
+	width: 400px;
+}
+
+div: hover {
+	opacity: .6;
+	filter: alpha(opacity=60);
+}
+
+.square {
+	border: 1px solid white;
+	width: 700px;
+	height: 400px;
+	margin: 0 auto;	
+	text-align: center;
+	margin-top: 100px;
+}

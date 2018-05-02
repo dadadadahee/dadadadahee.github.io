@@ -1,0 +1,24 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+html {
+	background-color: #bc9876;
+}
+
+img {
+	width: 200px;
+	display: inline-block;
+}
+
+.long {
+	height: 20%;
+}
+
+.scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 80px;
+    white-space:nowrap
+}

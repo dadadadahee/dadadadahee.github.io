@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="category.css">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<title>pocket archive</title>
+</head>
+<body>
+<!-- list of namecards and their links in category 1 -->
+
+
+
+<script type="text/javascript">
+
+/*
+	
+	//json file structure:
+
+	{
+		"myimages" : [
+			
+			{
+				"url" : "pagetotargetlink",
+				"imageurl" : "/images/image.jpg"
+				"left" : 20,
+				"right" : 40
+			},
+			{
+				"url" : "pagetotargetlink",
+				"imageurl" : "/images/image.jpg"
+			},
+			{
+				"url" : "pagetotargetlink",
+				"imageurl" : "/images/image.jpg"
+			},
+			{
+				"url" : "pagetotargetlink",
+				"imageurl" : "/images/image.jpg"
+			}
+		
+		]
+	}
+
+
+*/
+
+	
+var url = "https://raw.githubusercontent.com/dadadadahee/dadadadahee.github.io/master/collection.json";
+
+
+//you'd need to load jquery do the json example that robby had
+
+$.getJSON(url, function(data){
+
+	var array = data.myimages;
+
+	for (var i = 0; i < array.length; i++) {
+		
+		var string = "<a class='imageclass' style='right:" + array[i].right + "px;' href='" + array[i].url + "'><img id='customId-" + i + "' src='" + array[i].imageurl + "'></a>"
+
+		//append string to dom
+
+	}
+
+})
+
+
+
+
+</script>
+
+
+	<a class="" href="../category2.html"><img src="images/thisyo.jpg"></a>
+
+</body>
+</html>
