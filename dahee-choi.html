@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+	
+var url = "https://raw.githubusercontent.com/dadadadahee/dadadadahee.github.io/master/collection.json"
+
+$.getJSON( url, function(data){
+
+	var myobject = data;
+
+	for (var i = 0; i < myobject.utility.length; i++) {
+		
+		$("body").append( "<p class=''>" + myobject.utility[i].title + "</p>")
+	}
+
+
+})
+
+</script>
+
+</body>
+</html>
