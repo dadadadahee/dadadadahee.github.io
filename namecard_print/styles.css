@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Signika|Abril+Fatface|Cabin+Sketch|Contrail+One|Flamenco|Forum|IBM+Plex+Serif|Pangolin|Shrikhand|Source+Sans+Pro|Unica+One');
+
+body {
+	background-color: #bc9876;
+	height: 100%;
+	width: 100%;
+	margin-top: 50px;
+	margin-left: 30px;
+}
+
+.namecard {
+	width: 400px;
+	height: 228px;
+	border: 0px solid black;
+	margin-left: 50%;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+#name_here {
+	font-size: 30px;
+}
+
+#address_here {
+	font-size: ;
+}
+
+#number_here {
+
+}
+
+#website_here {
+
+}
+
+form {
+	padding-bottom: 5px;
+	display: inline;
+}
+
+p {
+	color: white;
+	font-family: 'Signika', sans-serif;
+	display: inline;
+}
+
+button {
+	background: #bc9876;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	text-shadow:none;
+	display: inline;
+}
+
+button:hover {
+	background: #fff;
+	color: #bc9876;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	text-shadow:none;
+}
+
+input[type=text] {
+    background-color: #bc9876;
+    color: white;
+    border: 0; padding: 4px 0; 
+    border-bottom: 1px solid #ccc; 
+    background-color: transparent;
+}
+
+select {
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;       /* remove default arrow */
+	background-image: url(...);   /* add custom arrow */
+	background: #bc9876;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	text-shadow:none;
+	text-align: center;
+}
+
+input {
+
+}
+
+select #font {
+	
+}
+
+
+#save_button {
+ /*center this and make it bigger */
+}
+
+#UnicaOne { font-family: 'Unica One', cursive; }
+#Pangolin { font-family: 'Pangolin', cursive; }
+#Abril { font-family: 'Abril Fatface', cursive;}
+#Shrikhand { font-family: 'Shrikhand', cursive;}
+#Forum {font-family: 'Forum', cursive;}
+#Contrail {font-family: 'Contrail One', cursive; }
+#cabin { font-family: 'Cabin Sketch', cursive; }
+#Flamenco { font-family: 'Flamenco', cursive; }
+#sourcesanspro { font-family: 'Source Sans Pro', sans-serif; }
+#IBM { font-family: 'IBM Plex Serif', serif; }
+
+#size1 { font-size: 10px; }
+#size2 { font-size: 11px; }
+#size3 { font-size: 12px; }
+#size4 { font-size: 13px; }
+#size5 {font-size: 14px;}
+#size6 {font-size: 15px; }
+#size7 { font-size: 16px; }
+#size8 { font-size: 17px; }
+#size9 { font-size: 18px; }
+#size10 { font-size: 19px; }
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+
+@media print {
+	body * {
+		visibility: hidden;
+	}
+	#namecard * {
+		visibility: visible;
+	}
+	#namecard {
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: black;
+	}
+}
+
+.grabbing {cursor: -webkit-grabbing; cursor: grabbing;}
+
