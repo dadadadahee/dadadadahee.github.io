@@ -242,5 +242,22 @@ input {
 	margin: 0;
 	text-align: center;
 	}
+
+	#print_hide {
+		display: none;
+	}
+
+	#name_here {
+		padding: 20px;
+	}
+
+	#address_here {
+		padding: 10px;
+		text-align: center;
+	}
+
+	#number_here {
+		
+	}
 }
 
