@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Catamaran:400');
+
+		body {
+			background-color: #bc9876;
+		}
+
+		p {
+			color: white;
+			font-family: 'Catamaran', sans-serif;
+			font-size: 17px;
+			text-align: right;
+		}
+
+		#wrap {
+			text-align: center;
+		}
+
+		#rectangle, #square {
+			margin: 50px;
+			margin-top: 130px;
+			outline: 1px solid white;
+
+		}
+
+		#rectangle {
+			width: 400px;
+			height: 228px;
+			background-color: #bc9876;
+			display: inline-block;
+		}
+
+		#square {
+			width: 250px;
+			height: 250px;
+		    right: 0px;
+			background-color: #bc9876;
+			display: inline-block;
+		}
+
+		#rectangle:hover {
+			background-color: white;
+			transition: .5s ease;
+		}
+
+		#square:hover {
+			background-color: white;
+			transition: .5s ease;
+		}
+
+@media only screen and (max-width: 480px) {
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+			h1 {
+				font-size: 150%;
+				padding: 10px;
+				text-align: center;
+			}
+
+			#rectangle {
+				width: 100px;
+				height: 57px;
+				clear:both;
+				margin:auto;
+				display: block;
+				text-align: center;
+			}
+
+			#square {
+			display: block;
+			width:150px;
+			height: 150px;
+			text-align: center;
+
+			}
+}
+
+
+
+	</style>
+</head>
+<body>
+	<p>choose your ratio.</p>
+	<div id="wrap">
+		<a href="layout_one.html"><div id="rectangle"></div></a>
+		<a href="layout_two.html"><div id="square"></div></a>
+	</div>
+</body>
+</html>

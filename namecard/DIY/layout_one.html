@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+ 	<title>DIY namecard</title>
+</head>
+<body>
+<div class="row">
+		<h1 id="title">MAKE YOUR OWN NAMECARD</h1>
+
+	<div class="column">
+	<h2>1. choose the color :</h2>
+		<select id="color" onchange="colorFunction()"> 
+			<option value="transparent">None</option>
+			<option value="red">Red</option>
+			<option value="orange">Orange</option>
+			<option value="yellow">Yellow</option>
+			<option value="green">Green</option>
+			<option value="navy">Navy</option>
+			<option value="pink">Pink</option> 
+			<option value="purple">Purple</option>
+			<option value="gray">Gray</option> 
+			<option value="white">White</option>
+			<option value="black">Black</option>
+			<option value="peach">Peach</option>
+			<option value="brown">Brown</option>
+		</select>
+<br>
+	<h2>2. type in the information: </h2>
+		<form id="form1">
+		<h3>Name </h3> <input name="name" type="text" size="20"></form>
+		<button onclick="outputname()"> submit </button>
+
+		<form id="form2">
+		<h3>Address </h3> <input name="name" type="text" size="20"></form>
+		<button onclick="outputaddress()"> submit </button>
+
+		<form id="form3">
+		<h3>Number </h3> <input name="name" type="text" size="20"></form>
+		<button onclick="outputnumber()"> submit </button>
+
+		<form id="form4">
+		<h3>Website </h3> <input name="name" type="text" size="20"></form>
+		<button onclick="outputwebsite()"> submit </button>
+<br>
+
+	</div>
+
+	<div class="column">
+	<h2>3. choose an image or logo : </h2>
+		<form id="form5"><input type="file" id="files" name="files[]" multiple></form>
+<br><br><br><br>
+	<h2>4. stylize your font by dragging and changing the font!</h2>
+<br>
+		<select id="choose">
+			<option id="Name" value="1">Name</option> 
+			<option id="Address" value="2">Address</option> 
+			<option id="Number" value="3">Number</option> 
+			<option id="Website" value="4">Website</option> 
+		</select>
+
+		<select id="font" onchange="fontFunction(this);" >
+			<option id="UnicaOne" value="">Unica One</option> 
+			<option id="Pangolin" value="">Pangolin</option> 
+			<option id="Abril" value="">Abril Fatface</option> 
+			<option id="Shrikhand" value="">Shrikhand</option> 
+			<option id="Forum" value="">Forum</option> 
+			<option id="Contrail" value="">Contrail One</option> 
+			<option id="cabin" value="">Cabin sketch</option> 
+			<option id="Flamenco" value="">Flamenco</option> 
+			<option id="sourcesanspro" value="">Source Sans Pro</option> 
+			<option id="IBM" value="">IBM Plex Serif</option>
+		</select>
+
+		<select id="fontcolor" onchange="fontColor(this);" >
+			<option>Black</option> 
+			<option>AntiqueWhite</option> 
+			<option>Aqua</option> 
+			<option>Aquamarine</option> 
+			<option>Cornsilk</option> 
+			<option>BlueViolet</option> 
+			<option>Brown</option> 
+			<option>CadetBlue</option> 
+			<option>DarkCyan</option> 
+			<option>DarkGreen</option>
+			<option>White</option>
+			<option>Salmon</option>
+			<option>Tomato</option>
+
+		</select>
+
+		<select id="fontsize" onchange="fontsize(this);">
+			<option>medium</option> 
+			<option>10%</option> 
+			<option>30%</option> 
+			<option>50%</option> 
+			<option>70%</option> 
+			<option>90%</option> 
+			<option>100%</option>
+			<option>150%</option>
+			<option>200%</option>
+			<option>250%</option>
+			<option>300%</option>
+			<option>350%</option>
+			<option>400%</option>
+			<option>450%</option>
+			<option>500%</option>
+		</select><br><br><br><br>	
+
+	<h2>5. save your customized namecard and print!</h2><br><button id="save_button" onclick="printFunction()">save &amp; print</button>
+	</div>
+
+	<div class="column3" id="namecard" style="height:228px; width:400px;">
+		<p id="name_here" class="grabbing"></p>
+		<p id="address_here" class="grabbing"></p>
+		<p id="number_here" class="grabbing""></p>
+		<p id="website_here" class="grabbing"></p>
+		<output id="list"></output>
+	</div>
+
+
+</div>
+
+	<script>
+
+		function outputname() {
+			var x,y,name,a,b,answer;
+			x=document.getElementById("form1");
+			y=x.elements["name"].value;
+			document.getElementById("name_here").innerHTML=""+y+ "<br>";
+		}
+
+		function outputaddress() {
+			var x,y,name,a,b,answer;
+			x=document.getElementById("form2");
+			y=x.elements["name"].value;
+			document.getElementById("address_here").innerHTML=""+y+ "<br>";
+		}
+
+		function outputnumber() {
+			var x,y,name,a,b,answer;
+			x=document.getElementById("form3");
+			y=x.elements["name"].value;
+			document.getElementById("number_here").innerHTML=""+y+ "<br>";
+		}
+
+		function outputwebsite() {
+			var x,y,name,a,b,answer;
+			x=document.getElementById("form4");
+			y=x.elements["name"].value;
+			document.getElementById("website_here").innerHTML=""+y+ "<br>";
+		}
+
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+
+          $( ".thumb" ).draggable();
+
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+	function colorFunction() {
+	    var x = document.getElementById("color").value;
+	    //document.getElementById("namecard").style.backgroundColor = x;
+	    $("#namecard").attr("class", "namecard")
+	    document.getElementById("namecard").classList.add(x);
+	}
+
+	function fontFunction(selectTag) {
+		console.log(document.getElementById("choose").value);
+	    if (document.getElementById("choose").value == 1) {
+	    	console.log("1");
+	    	var listValue = selectTag.options[selectTag.selectedIndex].text;
+	    	document.getElementById("name_here").style.fontFamily = listValue;
+	    }
+	    if (document.getElementById("choose").value == 2) {
+	    	console.log("2");
+	    	var listValue = selectTag.options[selectTag.selectedIndex].text;
+	    	document.getElementById("address_here").style.fontFamily = listValue;
+	    }
+	    if (document.getElementById("choose").value == 3) {
+	    	console.log("3");
+	    	var listValue = selectTag.options[selectTag.selectedIndex].text;
+	    	document.getElementById("number_here").style.fontFamily = listValue;
+	    }
+	    if (document.getElementById("choose").value == 4) {
+	    	console.log("4");
+	    	var listValue = selectTag.options[selectTag.selectedIndex].text;
+	    	document.getElementById("website_here").style.fontFamily = listValue;
+   		 }
+
+	}
+
+	function fontColor(selectTag) {
+	if (document.getElementById("choose").value == 1) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("name_here").style.color = listValue;
+		}
+	if (document.getElementById("choose").value == 2) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("address_here").style.color = listValue;
+		}
+	if (document.getElementById("choose").value == 3) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("number_here").style.color = listValue;
+		}
+	if (document.getElementById("choose").value == 4) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("website_here").style.color = listValue;
+		}
+	}
+
+	function fontsize(selectTag) {
+	if (document.getElementById("choose").value == 1) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("name_here").style.fontSize = listValue;
+		}
+	if (document.getElementById("choose").value == 2) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("address_here").style.fontSize = listValue;
+		}
+	if (document.getElementById("choose").value == 3) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("number_here").style.fontSize = listValue;
+		}
+	if (document.getElementById("choose").value == 4) {
+	var listValue = selectTag.options[selectTag.selectedIndex].text;
+    document.getElementById("website_here").style.fontSize = listValue;
+		}
+	}
+
+
+	$( function() {
+		$( "#name_here" ).draggable();
+	});
+
+	$( function() {
+		$( "#address_here" ).draggable();
+	});
+
+	$( function() {
+		$( "#number_here" ).draggable();
+	});
+
+	$( function() {
+		$( "#website_here" ).draggable();
+	});
+
+	function printFunction() {
+		window.print();
+	}
+
+	</script>
+</body>
+</html>

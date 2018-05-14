@@ -1,24 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Signika|Abril+Fatface|Cabin+Sketch|Contrail+One|Flamenco|Forum|IBM+Plex+Serif|Pangolin|Shrikhand|Source+Sans+Pro|Unica+One');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:200|Signika|Abril+Fatface|Cabin+Sketch|Contrail+One|Flamenco|Forum|IBM+Plex+Serif|Pangolin|Shrikhand|Source+Sans+Pro|Unica+One');
+* {
+	box-sizing: border-box;
+
+}
 
 body {
 	background-color: #bc9876;
 	height: 100%;
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 10px;
 	margin-left: 30px;
 }
 
 .namecard {
-	width: 400px;
-	height: 228px;
-	border: 0px solid black;
-	margin-left: 50%;
+	margin-left: 55%
 }
 
 .column {
 	float: left;
-	width: 50%;
+	width: 23%;
+	padding: 10px;
 	height: 100%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 #name_here {
@@ -40,6 +48,29 @@ body {
 form {
 	padding-bottom: 5px;
 	display: inline;
+}
+
+h1 {
+	color: white;
+	font-family: 'Signika', sans-serif;
+	margin-bottom: 10px;
+	font-size: 30px;
+}
+
+
+h2 {
+	color: white;
+	font-family: 'Catamaran', sans-serif;
+	display: inline;
+	font-size: 13px;
+
+}
+
+h3 {
+	color: white;
+	font-family: 'Signika', sans-serif;
+	font-size: 12px;
+
 }
 
 p {
@@ -74,26 +105,14 @@ input[type=text] {
 }
 
 select {
-	-webkit-appearance: none; 
-	-moz-appearance: none;
-	appearance: none;       /* remove default arrow */
-	background-image: url(...);   /* add custom arrow */
 	background: #bc9876;
 	color: #fff;
 	border: 1px solid #eee;
-	border-radius: 20px;
-	text-shadow:none;
-	text-align: center;
 }
 
 input {
-
+	color: #fff;
 }
-
-select #font {
-	
-}
-
 
 #save_button {
  /*center this and make it bigger */
@@ -110,37 +129,118 @@ select #font {
 #sourcesanspro { font-family: 'Source Sans Pro', sans-serif; }
 #IBM { font-family: 'IBM Plex Serif', serif; }
 
-#size1 { font-size: 10px; }
-#size2 { font-size: 11px; }
-#size3 { font-size: 12px; }
-#size4 { font-size: 13px; }
-#size5 {font-size: 14px;}
-#size6 {font-size: 15px; }
-#size7 { font-size: 16px; }
-#size8 { font-size: 17px; }
-#size9 { font-size: 18px; }
-#size10 { font-size: 19px; }
-
 .thumb {
     height: 75px;
     border: 1px solid #000;
     margin: 10px 5px 0 0;
   }
+.transparent {
+	background: transparent;
+}
+
+.navy{
+	background-color: #283044;
+}
+
+.red{
+	background-color: #8C1C13;
+}
+
+.orange{
+	background-color: #D16014;
+}
+
+.yellow {
+	background-color: #FFE787;
+}
+
+.green {
+	background-color: #313715;
+}
+
+.pink {
+	background-color: #FF9CB3;
+}
+
+.purple {
+	background-color: #443850;
+}
+
+.gray {
+	background-color: #828489;
+}
+
+.white {
+	background-color: #FFFFFF;
+}
+
+.black {
+	background-color: #000000;
+}
+
+.peach {
+	background-color: #F1AB86;
+}
+
+.brown {
+	background-color: #4F3130;
+}
+
+
 
 @media print {
+	body{
+		background-color: #ffffff;
+	}
+
 	body * {
 		visibility: hidden;
 	}
 	#namecard * {
-		visibility: visible;
+		visibility: visible !important;
 	}
 	#namecard {
+		visibility: visible !important;
 		position: absolute;
 		left: 0;
 		top: 0;
-		background-color: black;
+		
 	}
+	
 }
 
 .grabbing {cursor: -webkit-grabbing; cursor: grabbing;}
+
+
+@media only screen and (max-width: 480px) {
+	body {
+	padding: 0;
+	margin: 0;
+	}
+
+	h1 {
+		font-size: 150%;
+		padding: 0;
+		text-align: center;
+	}
+
+	.namecard {
+		width: 200px;
+		height: 114px;
+		margin-top: 600px !important; 
+		clear:both;
+		min-width: 220px;
+		margin:auto;
+		margin-bottom: 50px;
+	}
+
+	.column {
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	}
+}
 
