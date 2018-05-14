@@ -243,9 +243,6 @@ input {
 	text-align: center;
 	}
 
-	#print_hide {
-		display: none;
-	}
 
 	#name_here {
 		padding: 20px;
@@ -257,7 +254,7 @@ input {
 	}
 
 	#number_here {
-		
+
 	}
 }
 
